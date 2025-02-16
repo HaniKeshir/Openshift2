@@ -1,0 +1,16 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachinConfig
+metadata:
+  name:  99-worker-static-ip
+  labels:
+    machineconfiguration.openshift.io/role: worker
+spec:
+  config:
+    ignition:
+      version: 3.2.0
+    storage:
+      files:
+        - path: /etc/NetworkManager/system-connections/ens192.nmconnection
+          mode: 0600
+          overwrite: true
+          contents: "data:text/plain;charset=utf-8;base64,<BASE64_ENCODED_CONFIG>"

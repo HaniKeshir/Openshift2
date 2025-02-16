@@ -1,0 +1,11 @@
+#!/bin/bash
+
+nmcli connection modify "Wired connection 1" connection.id ens192
+nmcli connection modify "Wired connection 2" connection.id ens224
+nmcli connection modify "Wired connection 3" connection.id ens256
+
+nmcli connection modify ens192 ipv4.addresses 192.168.51.2/24
+nmcli connection modify ens192 ipv4.gateway 192.168.51.1
+nmcli connection modify ens192 ipv4.dns 8.8.8.8
+nmcli connection modify ens192 ipv4.method manual
+nmcli connection up e
