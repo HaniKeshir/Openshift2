@@ -1,0 +1,20 @@
+$TTL 86400
+@   IN  SOA  svc.ocp.lan. root.ocp.lan. (
+        2024022501  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        86400 )     ; Minimum TTL
+
+    IN  NS  svc.ocp.lan.
+
+; Reverse Lookup for Data Network (192.168.52.0/24)
+2   IN  PTR ocp-w1-data.ocp.lan.
+3   IN  PTR ocp-w2-data.ocp.lan.
+4   IN  PTR ocp-w3-data.ocp.lan.
+5   IN  PTR bootstrap-data.ocp.lan.
+6   IN  PTR ocp-cp1-data.ocp.lan.
+7   IN  PTR ocp-cp2-data.ocp.lan.
+8   IN  PTR ocp-cp3-data.ocp.lan.
+9   IN  PTR svc-data.ocp.lan.
+

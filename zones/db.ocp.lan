@@ -1,0 +1,39 @@
+$TTL 86400
+@   IN  SOA  svc.ocp.lan. root.ocp.lan. (
+        2024022501  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        86400 )     ; Minimum TTL
+
+    IN  NS  svc.ocp.lan.
+svc IN  A   192.168.51.9
+
+; Bootstrap Node
+bootstrap IN  A   192.168.51.5
+bootstrap-data IN  A   192.168.52.5
+
+; Control Plane Nodes (Masters)
+ocp-cp1 IN  A   192.168.51.6
+ocp-cp2 IN  A   192.168.51.7
+ocp-cp3 IN  A   192.168.51.8
+ocp-cp1-data IN  A   192.168.52.6
+ocp-cp2-data IN  A   192.168.52.7
+ocp-cp3-data IN  A   192.168.52.8
+
+; Worker Nodes
+ocp-w1 IN  A   192.168.51.2
+ocp-w2 IN  A   192.168.51.3
+ocp-w3 IN  A   192.168.51.4
+ocp-w1-data IN  A   192.168.52.2
+ocp-w2-data IN  A   192.168.52.3
+ocp-w3-data IN  A   192.168.52.4
+
+; Inter-Pod Network for Worker Nodes
+ocp-w1-pod IN  A   192.168.53.2
+ocp-w2-pod IN  A   192.168.53.3
+ocp-w3-pod IN  A   192.168.53.4
+
+; Service Node
+svc IN  A   192.168.51.9
+svc-data IN  A   192.168.52.9

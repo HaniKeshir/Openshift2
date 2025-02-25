@@ -1,0 +1,14 @@
+$TTL 86400
+@   IN  SOA  svc.ocp.lan. root.ocp.lan. (
+        2024022501  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        86400 )     ; Minimum TTL
+
+    IN  NS  svc.ocp.lan.
+
+; Reverse Lookup for Inter-Pod Network (192.168.53.0/24)
+2   IN  PTR ocp-w1-pod.ocp.lan.
+3   IN  PTR ocp-w2-pod.ocp.lan.
+4   IN  PTR ocp-w3-pod.ocp.lan.

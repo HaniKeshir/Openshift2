@@ -1,0 +1,22 @@
+[0;1;32m●[0m named.service - Berkeley Internet Name Domain (DNS)
+     Loaded: loaded (]8;;file://localhost.localdomain/usr/lib/systemd/system/named.service/usr/lib/systemd/system/named.service]8;;; [0;1;32menabled[0m; preset: [0;1;38;5;185mdisabled[0m)
+     Active: [0;1;32mactive (running)[0m since Tue 2025-02-25 04:35:15 EST; 10min ago
+    Process: 54302 ExecStartPre=/bin/bash -c if [ ! "$DISABLE_ZONE_CHECKING" == "yes" ]; then /usr/sbin/named-checkconf -z "$NAMEDCONF"; else echo "Checking of zone files is disabled"; fi (code=exited, status=0/SUCCESS)
+    Process: 54304 ExecStart=/usr/sbin/named -u named -c ${NAMEDCONF} $OPTIONS (code=exited, status=0/SUCCESS)
+   Main PID: 54305 (named)
+      Tasks: 34 (limit: 48929)
+     Memory: 102.7M
+        CPU: 398ms
+     CGroup: /system.slice/named.service
+             └─[0;38;5;245m54305 /usr/sbin/named -u named -c /etc/named.conf[0m
+
+Feb 25 04:43:58 localhost.localdomain named[54305]: listening on IPv6 interface ens33, fe80::250:56ff:feb7:b504%3#53
+Feb 25 04:43:58 localhost.localdomain named[54305]: listening on IPv6 interface ens34, fe80::250:56ff:feb7:725d%4#53
+Feb 25 04:44:43 localhost.localdomain named[54305]: no longer listening on fe80::250:56ff:feb7:b504%3#53
+Feb 25 04:44:43 localhost.localdomain named[54305]: no longer listening on fe80::250:56ff:feb7:725d%4#53
+Feb 25 04:44:43 localhost.localdomain named[54305]: listening on IPv6 interface ens33, fe80::250:56ff:feb7:b504%3#53
+Feb 25 04:44:43 localhost.localdomain named[54305]: listening on IPv6 interface ens34, fe80::250:56ff:feb7:725d%4#53
+Feb 25 04:45:28 localhost.localdomain named[54305]: no longer listening on fe80::250:56ff:feb7:b504%3#53
+Feb 25 04:45:28 localhost.localdomain named[54305]: no longer listening on fe80::250:56ff:feb7:725d%4#53
+Feb 25 04:45:28 localhost.localdomain named[54305]: listening on IPv6 interface ens33, fe80::250:56ff:feb7:b504%3#53
+Feb 25 04:45:28 localhost.localdomain named[54305]: listening on IPv6 interface ens34, fe80::250:56ff:feb7:725d%4#53
